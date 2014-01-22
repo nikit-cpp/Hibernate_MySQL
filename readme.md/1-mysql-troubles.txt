@@ -1,0 +1,16 @@
+
+C:\Documents and Settings\Ник\.m2\repository\mysql\mysql-connector-java\5.1.28
+mysql-connector-java-5.1.28.jar
+
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>5.1.28</version>
+		</dependency>
+
+>Unable to locate JAR/zip in file system as specified by the driver definition: mysql-connector-java-5.1.0-bin.jar.
+-> http://www.eclipse.org/forums/index.php/t/74927/ (1-mysql-connector-to-eclipse.png)
+
+>Ping failed
+>com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown database 'database'
+-> Нужно заранее создать базу 'myautopark' и её указать в URL, а не пытаться подключиться к несуществующей 'database' (http://stackoverflow.com/questions/11461931/eclipse-mysql-connection-fail)
