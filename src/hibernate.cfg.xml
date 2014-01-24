@@ -29,7 +29,8 @@
 		<!-- Echo all executed SQL to stdout -->
 		<property name="show_sql">false</property>
 		
-		<mapping resource="logic/Bus.hbm.xml" />
+<!-- <mapping resource="logic/Bus.hbm.xml" />  -->
+<mapping class="logic.Bus" />
 		<mapping resource="logic/Driver.hbm.xml" />
 		<mapping resource="logic/Route.hbm.xml" />
 
