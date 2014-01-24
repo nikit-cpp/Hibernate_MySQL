@@ -28,12 +28,13 @@ public class Bus {
 	public void setRoute_id(Long route_id) { this.route_id = route_id; }
 	private Long route_id;
 
-    @ManyToMany( targetEntity = logic.Driver.class )
+	// Сущности Водитель и Автобус относятся как "многие-ко-многим"
+    @ManyToMany( targetEntity = logic.Driver.class ) // Целевой класс, который будет помещён во множество, возвращаемое геттером
     @JoinTable(
             name="BusDriver",
-            joinColumns=@JoinColumn(name="bus_id"),
-            inverseJoinColumns=@JoinColumn(name="driver_id")
-        )
+            joinColumns=@JoinColumn(name="bus_id"), // Столбец <key column="bus_id" /> в Таблице соединения, представляющий этот класс
+            inverseJoinColumns=@JoinColumn(name="driver_id") // ... столбец, из которого выбираются водители
+    )
     public Set getDrivers() { return drivers; }
 	public void setDrivers(Set drivers) { this.drivers = drivers; }
 	private Set drivers = new HashSet();
