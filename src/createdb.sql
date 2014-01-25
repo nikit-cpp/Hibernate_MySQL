@@ -1,13 +1,17 @@
-DROP DATABASE IF EXISTS `myautopark`;
-CREATE SCHEMA IF NOT EXISTS `myautopark` character set utf8;
-USE `myautopark` ;
+/* 
+ * http://www.h2database.com/html/grammar.html
+ */
+
+CREATE SCHEMA IF NOT EXISTS `myautopark`;
+
+SET SCHEMA `myautopark`;
 
 /***********************
  ********* busses ********
  ***********************/
 CREATE TABLE IF NOT EXISTS `busses` (
     `bus_id`		BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY, -- sql:BIGINT <-> java:long
-    `number`		LONGTEXT NOT NULL,
+    `number`		VARCHAR NOT NULL,
     `route_id`		BIGINT NOT NULL
 );
 
@@ -16,8 +20,8 @@ CREATE TABLE IF NOT EXISTS `busses` (
  ***********************/
 CREATE TABLE IF NOT EXISTS `drivers` (
     `driver_id`		BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    `name`			LONGTEXT NOT NULL,
-    `surname`		LONGTEXT NOT NULL,
+    `name`			VARCHAR NOT NULL,
+    `surname`		VARCHAR NOT NULL,
 	`age`			INT NOT NULL
 );
 
@@ -26,7 +30,7 @@ CREATE TABLE IF NOT EXISTS `drivers` (
  ***********************/
 CREATE TABLE IF NOT EXISTS `routes` (
     `route_id`		BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    `name`			LONGTEXT NOT NULL,
+    `name`			VARCHAR NOT NULL,
     `number`		INT NOT NULL
 );
 

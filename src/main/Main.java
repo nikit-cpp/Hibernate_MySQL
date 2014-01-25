@@ -1,10 +1,16 @@
 package main;
 
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.sql.SQLException;
 import java.util.Collection;
 import java.util.Iterator;
 
 //import org.apache.log4j.PropertyConfigurator;
+
+
+
 
 import util.HibernateUtil;
 import logic.*;
@@ -52,6 +58,7 @@ public class Main {
 							+ "   Фамилия: " + driver.getSurname());
 				}
 			}
+			//new BufferedReader(new InputStreamReader(System.in)).read();
 		}catch(Exception e) {
 			e.printStackTrace();
 		} finally {
