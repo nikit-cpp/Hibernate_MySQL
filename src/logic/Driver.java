@@ -41,6 +41,7 @@ public class Driver {
 	
 	// Сущности Водитель и Автобус относятся как "многие-ко-многим"
     @ManyToMany( targetEntity = logic.Bus.class ) // Целевой класс, который будет помещён во множество, возвращаемое геттером
+    // JoinTable -- это таблица соединения, объекта BusDriver не существует!
     @JoinTable(
             name="BusDriver",
             joinColumns=@JoinColumn(name="driver_id"), // Столбец <key column="driver_id" /> в Таблице соединения, представляющий этот класс
