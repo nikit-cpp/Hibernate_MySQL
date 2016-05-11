@@ -28,7 +28,7 @@ public class BusDAOImpl implements BusDAO {
 			session.getTransaction().commit();
 		} catch (Exception e) {
 			JOptionPane.showMessageDialog(null, e.getMessage(),
-					"Ошибка при вставке", JOptionPane.OK_OPTION);
+					"РћС€РёР±РєР° РїСЂРё РІСЃС‚Р°РІРєРµ", JOptionPane.OK_OPTION);
 		} finally {
 			if (session != null && session.isOpen()) {
 
@@ -46,7 +46,7 @@ public class BusDAOImpl implements BusDAO {
 			session.getTransaction().commit();
 		} catch (Exception e) {
 			JOptionPane.showMessageDialog(null, e.getMessage(),
-					"Ошибка при вставке", JOptionPane.OK_OPTION);
+					"РћС€РёР±РєР° РїСЂРё РІСЃС‚Р°РІРєРµ", JOptionPane.OK_OPTION);
 		} finally {
 			if (session != null && session.isOpen()) {
 				session.close();
@@ -62,7 +62,7 @@ public class BusDAOImpl implements BusDAO {
 			bus = (Bus) session.load(Bus.class, bus_id);
 		} catch (Exception e) {
 			JOptionPane.showMessageDialog(null, e.getMessage(),
-					"Ошибка 'findById'", JOptionPane.OK_OPTION);
+					"СњС€РёР±РєР° 'findById'", JOptionPane.OK_OPTION);
 		} finally {
 			if (session != null && session.isOpen()) {
 				session.close();
@@ -79,7 +79,7 @@ public class BusDAOImpl implements BusDAO {
 			busses = session.createCriteria(Bus.class).list();
 		} catch (Exception e) {
 			JOptionPane.showMessageDialog(null, e.getMessage(),
-					"Ошибка 'getAll'", JOptionPane.OK_OPTION);
+					"СњС€РёР±РєР° 'getAll'", JOptionPane.OK_OPTION);
 		} finally {
 			if (session != null && session.isOpen()) {
 				session.close();
@@ -97,7 +97,7 @@ public class BusDAOImpl implements BusDAO {
 			session.getTransaction().commit();
 		} catch (Exception e) {
 			JOptionPane.showMessageDialog(null, e.getMessage(),
-					"Ошибка при удалении", JOptionPane.OK_OPTION);
+					"СњС€РёР±РєР° РїСЂРё СѓРґР°Р»РµРЅРёРё", JOptionPane.OK_OPTION);
 		} finally {
 			if (session != null && session.isOpen()) {
 				session.close();
@@ -112,7 +112,7 @@ public class BusDAOImpl implements BusDAO {
 			session = HibernateUtil.getSessionFactory().getCurrentSession();
 			session.beginTransaction();
 			Long driver_id = driver.getId();
-			// пропущен as, ибо он опционален http://docs.jboss.org/hibernate/orm/4.3/manual/en-US/html/ch16.html#queryhql-from
+			// РїСЂРѕРїСѓС‰РµРЅ as, РёР±Рѕ РѕРЅ РѕРїС†РёРѕРЅР°Р»РµРЅ http://docs.jboss.org/hibernate/orm/4.3/manual/en-US/html/ch16.html#queryhql-from
 			Query query = session.createQuery(
 					" select b "
 							+ " from Bus b INNER JOIN b.drivers driver"

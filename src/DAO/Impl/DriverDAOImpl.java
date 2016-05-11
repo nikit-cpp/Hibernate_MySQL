@@ -33,7 +33,7 @@ public class DriverDAOImpl implements DriverDAO {
 			session.getTransaction().commit();
 		} catch (Exception e) {
 			JOptionPane.showMessageDialog(null, e.getMessage(),
-					"Œ¯Ë·Í‡ 'getDriversByBus'", JOptionPane.OK_OPTION);
+					"–û—à–∏–±–∫–∞ 'getDriversByBus'", JOptionPane.OK_OPTION);
 		} finally {
 			if (session != null && session.isOpen()) {
 				session.close();

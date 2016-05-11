@@ -6,10 +6,10 @@ import org.hibernate.cfg.Configuration;
 import org.hibernate.SessionFactory;
 
 /**
- * Теперь создадим класс, который будет хавать наш конфиг-файл и возвращать нам
- * объект типа SessionFactory, который отвечает за создание hibernate-сессии.
+ * РўРµРїРµСЂСЊ СЃРѕР·РґР°РґРёРј РєР»Р°СЃСЃ, РєРѕС‚РѕСЂС‹Р№ Р±СѓРґРµС‚ С…Р°РІР°С‚СЊ РЅР°С€ РєРѕРЅС„РёРі-С„Р°Р№Р» Рё РІРѕР·РІСЂР°С‰Р°С‚СЊ РЅР°Рј
+ * РѕР±СЉРµРєС‚ С‚РёРїР° SessionFactory, РєРѕС‚РѕСЂС‹Р№ РѕС‚РІРµС‡Р°РµС‚ Р·Р° СЃРѕР·РґР°РЅРёРµ hibernate-СЃРµСЃСЃРёРё.
  * 
- * @author Ник
+ * @author РќРёРє
  * 
  */
 
@@ -20,7 +20,7 @@ public class HibernateUtil {
 			sessionFactory = new Configuration().configure()
 					.buildSessionFactory();
 		} catch (Throwable ex) {
-			final String text = "Ошибка при создании сессии";
+			final String text = "РћС€РёР±РєР° РїСЂРё СЃРѕР·РґР°РЅРёРё СЃРµСЃСЃРёРё";
 			JOptionPane.showMessageDialog(null, text+": "+ex.getMessage(),
 					text, JOptionPane.OK_OPTION);
 			System.err.println(text+".\n" + ex);

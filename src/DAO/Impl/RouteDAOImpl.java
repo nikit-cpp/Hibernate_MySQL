@@ -25,7 +25,7 @@ public class RouteDAOImpl implements RouteDAO {
 			routes = session.createCriteria(Route.class).list();
 		} catch (Exception e) {
 			JOptionPane.showMessageDialog(null, e.getMessage(),
-					"Œ¯Ë·Í‡ 'getAll'", JOptionPane.OK_OPTION);
+					"–û—à–∏–±–∫–∞ 'getAll'", JOptionPane.OK_OPTION);
 		} finally {
 			if (session != null && session.isOpen()) {
 				session.close();
