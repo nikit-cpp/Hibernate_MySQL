@@ -1,5 +1,5 @@
 
-C:\Documents and Settings\Ник\.m2\repository\mysql\mysql-connector-java\5.1.28
+C:\Documents and Settings\РќРёРє\.m2\repository\mysql\mysql-connector-java\5.1.28
 mysql-connector-java-5.1.28.jar
 
 		<dependency>
@@ -13,4 +13,4 @@ mysql-connector-java-5.1.28.jar
 
 >Ping failed
 >com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown database 'database'
--> Нужно заранее создать базу 'myautopark' и её указать в URL, а не пытаться подключиться к несуществующей 'database' (http://stackoverflow.com/questions/11461931/eclipse-mysql-connection-fail)
+-> РќСѓР¶РЅРѕ Р·Р°СЂР°РЅРµРµ СЃРѕР·РґР°С‚СЊ Р±Р°Р·Сѓ 'myautopark' Рё РµС‘ СѓРєР°Р·Р°С‚СЊ РІ URL, Р° РЅРµ РїС‹С‚Р°С‚СЊСЃСЏ РїРѕРґРєР»СЋС‡РёС‚СЊСЃСЏ Рє РЅРµСЃСѓС‰РµСЃС‚РІСѓСЋС‰РµР№ 'database' (http://stackoverflow.com/questions/11461931/eclipse-mysql-connection-fail)
