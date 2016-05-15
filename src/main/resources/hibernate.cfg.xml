@@ -13,7 +13,7 @@
 		<property name="connection.url">jdbc:mysql://localhost/myautopark</property>
 		<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
 		<property name="connection.username">root</property>
-		<property name="connection.password">password</property>
+		<property name="connection.password">1488</property>
 		
 		<!-- JDBC connection pool (use the built-in) -->
 		<property name="connection.pool_size">1</property>
@@ -29,9 +29,9 @@
 		<!-- Echo all executed SQL to stdout -->
 		<property name="show_sql">false</property>
 		
-		<mapping resource="logic/Bus.hbm.xml" />
-		<mapping resource="logic/Driver.hbm.xml" />
-		<mapping resource="logic/Route.hbm.xml" />
+		<mapping resource="mapping/Bus.hbm.xml" />
+		<mapping resource="mapping/Driver.hbm.xml" />
+		<mapping resource="mapping/Route.hbm.xml" />
 
 	</session-factory>
 

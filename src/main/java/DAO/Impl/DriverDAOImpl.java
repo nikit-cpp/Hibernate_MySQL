@@ -24,16 +24,11 @@ public class DriverDAOImpl implements DriverDAO {
 			session = HibernateUtil.getSessionFactory().getCurrentSession();
 			session.beginTransaction();
 			Long bus_id = bus.getId();
-			Query query = session.createQuery(
-					" select d "
-							+ " from Driver d INNER JOIN d.busses bus"
-							+ " where bus.id = :busId ")
-						.setLong("busId", bus_id);
+			Query query = session.createQuery("select d from Driver d INNER JOIN d.busses bus where bus.id = :busId ").setLong("busId", bus_id);
 			drivers = (List<Driver>) query.list();
 			session.getTransaction().commit();
 		} catch (Exception e) {
-			JOptionPane.showMessageDialog(null, e.getMessage(),
-					"Ошибка 'getDriversByBus'", JOptionPane.OK_OPTION);
+			JOptionPane.showMessageDialog(null, e.getMessage(), "Ошибка 'getDriversByBus'", JOptionPane.OK_OPTION);
 		} finally {
 			if (session != null && session.isOpen()) {
 				session.close();

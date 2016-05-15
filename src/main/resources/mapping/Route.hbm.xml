@@ -3,7 +3,7 @@
     "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
     "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-	<class name="logic.Route" table="routes">
+	<class name="logic.Route" table="route">
 		<id column="route_id" name="id" type="java.lang.Long">
 			<generator class="increment" />
 		</id>

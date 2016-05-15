@@ -31,7 +31,6 @@ public class BusDAOImpl implements BusDAO {
 					"Ошибка при вставке", JOptionPane.OK_OPTION);
 		} finally {
 			if (session != null && session.isOpen()) {
-
 				session.close();
 			}
 		}
@@ -62,7 +61,7 @@ public class BusDAOImpl implements BusDAO {
 			bus = (Bus) session.load(Bus.class, bus_id);
 		} catch (Exception e) {
 			JOptionPane.showMessageDialog(null, e.getMessage(),
-					"ќшибка 'findById'", JOptionPane.OK_OPTION);
+					"Ошибка 'findById'", JOptionPane.OK_OPTION);
 		} finally {
 			if (session != null && session.isOpen()) {
 				session.close();
@@ -79,7 +78,7 @@ public class BusDAOImpl implements BusDAO {
 			busses = session.createCriteria(Bus.class).list();
 		} catch (Exception e) {
 			JOptionPane.showMessageDialog(null, e.getMessage(),
-					"ќшибка 'getAll'", JOptionPane.OK_OPTION);
+					"Ошибка 'getAll'", JOptionPane.OK_OPTION);
 		} finally {
 			if (session != null && session.isOpen()) {
 				session.close();
@@ -97,7 +96,7 @@ public class BusDAOImpl implements BusDAO {
 			session.getTransaction().commit();
 		} catch (Exception e) {
 			JOptionPane.showMessageDialog(null, e.getMessage(),
-					"ќшибка при удалении", JOptionPane.OK_OPTION);
+					"Ошибка при удалении", JOptionPane.OK_OPTION);
 		} finally {
 			if (session != null && session.isOpen()) {
 				session.close();
@@ -113,14 +112,9 @@ public class BusDAOImpl implements BusDAO {
 			session.beginTransaction();
 			Long driver_id = driver.getId();
 			// пропущен as, ибо он опционален http://docs.jboss.org/hibernate/orm/4.3/manual/en-US/html/ch16.html#queryhql-from
-			Query query = session.createQuery(
-					" select b "
-							+ " from Bus b INNER JOIN b.drivers driver"
-							+ " where driver.id = :driverId ")
-						.setLong("driverId", driver_id);
+			Query query = session.createQuery("select b from Bus b INNER JOIN b.drivers driver where driver.id = :driverId ").setLong("driverId", driver_id);
 			busses = (List<Bus>) query.list();
 			session.getTransaction().commit();
-
 		} finally {
 			if (session != null && session.isOpen()) {
 				session.close();
@@ -136,12 +130,9 @@ public class BusDAOImpl implements BusDAO {
 			session = HibernateUtil.getSessionFactory().getCurrentSession();
 			session.beginTransaction();
 			Long route_id = route.getId();
-			Query query = session.createQuery(
-					"from Bus where route_id = :routeId ").setLong("routeId",
-					route_id);
+			Query query = session.createQuery("from Bus where route_id = :routeId ").setLong("routeId", route_id);
 			busses = (List<Bus>) query.list();
 			session.getTransaction().commit();
-
 		} finally {
 			if (session != null && session.isOpen()) {
 				session.close();

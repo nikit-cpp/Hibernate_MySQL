@@ -24,8 +24,7 @@ public class RouteDAOImpl implements RouteDAO {
 			session = HibernateUtil.getSessionFactory().openSession();
 			routes = session.createCriteria(Route.class).list();
 		} catch (Exception e) {
-			JOptionPane.showMessageDialog(null, e.getMessage(),
-					"Ошибка 'getAll'", JOptionPane.OK_OPTION);
+			JOptionPane.showMessageDialog(null, e.getMessage(), "Ошибка 'getAll'", JOptionPane.OK_OPTION);
 		} finally {
 			if (session != null && session.isOpen()) {
 				session.close();

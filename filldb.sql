@@ -14,7 +14,7 @@ USE `myautopark` ;
 /***********************
  ********* busses ********
  ***********************/
-INSERT INTO `busses` (`bus_id`, `number`, `route_id`) 
+INSERT INTO `bus` (`bus_id`, `number`, `route_id`)
 	VALUES	(1, "1б", 1),
 			(2, '666ф', 1),
 			(3, 'ЩЩЩ', 2),
@@ -33,7 +33,7 @@ INSERT INTO `busses` (`bus_id`, `number`, `route_id`)
 /***********************
  ********* drivers ********
  ***********************/
-INSERT INTO `drivers` (`driver_id`, `name`, `surname`, `age`) 
+INSERT INTO `driver` (`driver_id`, `name`, `surname`, `age`)
 	VALUES	(1, 'Иван','Петрович', 80),
 			(2, 'Владимир','Хутин', 60),
 			(3, 'Граф','Дракула', 150),
@@ -46,7 +46,7 @@ INSERT INTO `drivers` (`driver_id`, `name`, `surname`, `age`)
 /***********************
  ********* routes ********
  ***********************/
-INSERT INTO `routes` (`route_id`, `name`, `number`) 
+INSERT INTO `route` (`route_id`, `name`, `number`)
 	VALUES	(1, 'Золотое кольцо', 1001),
 			(2, 'АШАН Красногорск', 1002),
 			(3, 'АШАН Мытищи', 1003),
@@ -56,7 +56,7 @@ INSERT INTO `routes` (`route_id`, `name`, `number`)
 /***********************
  ********* BusDriver ********
  ***********************/
-INSERT INTO `BusDriver` (`bus_id`, `driver_id`) 
+INSERT INTO `bus_driver` (`bus_id`, `driver_id`)
 	VALUES	(1, 1),
 			(2, 2),
 			(3, 3),

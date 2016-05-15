@@ -3,7 +3,7 @@
     "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
     "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-	<class name="logic.Bus" table="busses">
+	<class name="logic.Bus" table="bus">
 		<!-- Параметр column указывает на какую колонку в таблице будет ссылаться 
 			поле id нашего объекта, Параметр id - название поля объекта, см. выше -->
 		<id column="bus_id" name="id" type="java.lang.Long">
@@ -11,8 +11,8 @@
 		</id>
 		<property column="number" name="number" type="java.lang.String" />
 
-		<!-- Связываем поле объекта "drivers" с таблицей "busDriver"... -->
-		<set name="drivers" table="busDriver" lazy="false">
+		<!-- Связываем поле объекта "drivers" с таблицей "bus_driver"... -->
+		<set name="drivers" table="bus_driver" lazy="false">
 			<!--Тег key имеет параметр column, который говорит, на какую колонку в 
 				таблице связи "busDriver" будет ссылаться поле нашего объекта -->
 			<!-- В этом случае в таблице "busDriver" ключевым столбцом для поиска 
