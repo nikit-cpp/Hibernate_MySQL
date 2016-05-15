@@ -7,8 +7,7 @@ import java.util.List;
 
 import javax.swing.JOptionPane;
 
-import logic.Bus;
-import logic.Route;
+import model.Route;
 
 import org.hibernate.Session;
 

@@ -11,8 +11,8 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 
 import util.HibernateUtil;
-import logic.Bus;
-import logic.Driver;
+import model.Bus;
+import model.Driver;
 import DAO.DriverDAO;
 
 public class DriverDAOImpl implements DriverDAO {

@@ -1,9 +1,9 @@
 package DAO.Impl;
 
 import DAO.BusDAO;
-import logic.Bus;
-import logic.Driver;
-import logic.Route;
+import model.Bus;
+import model.Driver;
+import model.Route;
 
 import java.sql.SQLException;
 import java.util.Collection;

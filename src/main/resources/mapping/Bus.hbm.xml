@@ -3,7 +3,7 @@
     "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
     "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-	<class name="logic.Bus" table="bus">
+	<class name="model.Bus" table="bus">
 		<!-- Параметр column указывает на какую колонку в таблице будет ссылаться 
 			поле id нашего объекта, Параметр id - название поля объекта, см. выше -->
 		<id column="bus_id" name="id" type="java.lang.Long">
@@ -24,7 +24,7 @@
 				на той стороне. -->
 			<!-- В этом случае из таблицы "busDriver" мы хотим получить содержимое 
 				столбца driver_id -->
-			<many-to-many column="driver_id" class="logic.Driver" />
+			<many-to-many column="driver_id" class="model.Driver" />
 		</set>
 
 	</class>

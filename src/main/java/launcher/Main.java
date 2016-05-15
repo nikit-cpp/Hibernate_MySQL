@@ -6,9 +6,8 @@ import java.util.Iterator;
 
 //import org.apache.log4j.PropertyConfigurator;
 
-import launcher.Factory;
 import util.HibernateUtil;
-import logic.*;
+import model.*;
 
 public class Main {
 	public static void main(String[] args) throws SQLException {
