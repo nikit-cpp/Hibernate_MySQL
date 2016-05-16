@@ -33,9 +33,6 @@
 		<mapping class="model.Driver"/>
 		<mapping class="model.Route"/>
 
-		<!--<mapping class="dto.CustomRoute"/>
-		<mapping class="dto.CustomBus"/>-->
-
 	</session-factory>
 
 </hibernate-configuration>

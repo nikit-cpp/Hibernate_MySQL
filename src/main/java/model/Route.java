@@ -49,7 +49,7 @@ public class Route {
 		return number;
 	}
 
-	public Set getBusses() {
+	public Set<Bus> getBusses() {
 		return busses;
 	}
 }
