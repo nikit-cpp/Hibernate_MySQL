@@ -21,6 +21,7 @@ public class CustomBusDAO {
         List<CustomBus> busses = new ArrayList<CustomBus>();
         try {
             session = HibernateUtil.getSessionFactory().openSession();
+            // TODO select r.id as id, r.name as routeCustomName, b.number as busNumber from bus b join route r on b.route_id = r.id;
             Query sqlQuery = session.
                     createSQLQuery("select bus.id as myCustomId, bus.number as myCustomNumber from bus;").
                     addScalar("myCustomId", StandardBasicTypes.LONG).
