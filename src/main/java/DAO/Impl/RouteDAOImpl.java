@@ -16,9 +16,9 @@ import DAO.RouteDAO;
 
 public class RouteDAOImpl implements RouteDAO {
 	
-	public Collection getAllRoutes() throws SQLException {
+	public Collection<Route> getAllRoutes() throws SQLException {
 		Session session = null;
-		List routes = new ArrayList<Route>();
+		List<Route> routes = new ArrayList<Route>();
 		try {
 			session = HibernateUtil.getSessionFactory().openSession();
 			routes = session.createCriteria(Route.class).list();

@@ -14,12 +14,12 @@ public interface BusDAO {
 
 	public Bus getBusById(Long bus_id) throws SQLException;
 
-	public Collection getAllBusses() throws SQLException;
+	public Collection<Bus> getAllBusses() throws SQLException;
 
 	public void deleteBus(Bus bus) throws SQLException;
 
-	public Collection getBussesByDriver(Driver driver) throws SQLException;
+	public Collection<Bus> getBussesByDriver(Driver driver) throws SQLException;
 
-	public Collection getBussesByRoute(Route route) throws SQLException;
+	public Collection<Bus> getBussesByRoute(Route route) throws SQLException;
 
 }

@@ -4,7 +4,8 @@ import java.sql.SQLException;
 import java.util.Collection;
 
 import model.Bus;
+import model.Driver;
 
 public interface DriverDAO {
-	Collection getDriversByBus(Bus bus) throws SQLException;
+	Collection<Driver> getDriversByBus(Bus bus) throws SQLException;
 }

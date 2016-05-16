@@ -70,9 +70,9 @@ public class BusDAOImpl implements BusDAO {
 		return bus;
 	}
 
-	public Collection getAllBusses() throws SQLException {
+	public Collection<Bus> getAllBusses() throws SQLException {
 		Session session = null;
-		List busses = new ArrayList<Bus>();
+		List<Bus> busses = new ArrayList<Bus>();
 		try {
 			session = HibernateUtil.getSessionFactory().openSession();
 			busses = session.createCriteria(Bus.class).list();
@@ -104,9 +104,9 @@ public class BusDAOImpl implements BusDAO {
 		}
 	}
 
-	public Collection getBussesByDriver(Driver driver) throws SQLException {
+	public Collection<Bus> getBussesByDriver(Driver driver) throws SQLException {
 		Session session = null;
-		List busses = new ArrayList<Bus>();
+		List<Bus> busses = new ArrayList<Bus>();
 		try {
 			session = HibernateUtil.getSessionFactory().getCurrentSession();
 			session.beginTransaction();
@@ -123,9 +123,9 @@ public class BusDAOImpl implements BusDAO {
 		return busses;
 	}
 
-	public Collection getBussesByRoute(Route route) {
+	public Collection<Bus> getBussesByRoute(Route route) {
 		Session session = null;
-		List busses = new ArrayList<Bus>();
+		List<Bus> busses = new ArrayList<Bus>();
 		try {
 			session = HibernateUtil.getSessionFactory().getCurrentSession();
 			session.beginTransaction();

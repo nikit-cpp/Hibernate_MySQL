@@ -17,9 +17,9 @@ import DAO.DriverDAO;
 
 public class DriverDAOImpl implements DriverDAO {
 	
-	public Collection getDriversByBus(Bus bus) throws SQLException {
+	public Collection<Driver> getDriversByBus(Bus bus) throws SQLException {
 		Session session = null;
-		List drivers = new ArrayList<Driver>();
+		List<Driver> drivers = new ArrayList<Driver>();
 		try {
 			session = HibernateUtil.getSessionFactory().getCurrentSession();
 			session.beginTransaction();
