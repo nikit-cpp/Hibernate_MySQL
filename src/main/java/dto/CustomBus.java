@@ -1,19 +1,17 @@
 package dto;
 
-import java.math.BigInteger;
-
 /**
  * Created by nik on 16.05.16.
  */
 public class CustomBus {
-    private BigInteger myCustomId;
+    private Long myCustomId;
     private String myCustomNumber;
 
-    public BigInteger getMyCustomId() {
+    public Long getMyCustomId() {
         return myCustomId;
     }
 
-    public void setMyCustomId(BigInteger myCustomId) {
+    public void setMyCustomId(Long myCustomId) {
         this.myCustomId = myCustomId;
     }
 
