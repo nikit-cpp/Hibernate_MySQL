@@ -7,7 +7,9 @@ import java.util.Iterator;
 //import org.apache.log4j.PropertyConfigurator;
 
 import DAO.CustomBusDAO;
+import DAO.CustomRouteDAO;
 import dto.CustomBus;
+import dto.CustomRoute;
 import factory.Factory;
 import util.HibernateUtil;
 import model.*;
@@ -49,6 +51,20 @@ public class Main {
 		while (customBusesIterator.hasNext()) {
 			CustomBus bus = customBusesIterator.next();
 			System.out.println("CustomBus: id=" + bus.getMyCustomId() + ", number=" + bus.getMyCustomNumber());
+		}
+
+		System.out.println("========CustomRoutes=========");
+		Collection<CustomRoute> customRoutes = new CustomRouteDAO().getAllCustomRoutes();
+		Iterator<CustomRoute> customRoutesIterator = customRoutes.iterator();
+		while (customRoutesIterator.hasNext()) {
+			CustomRoute route = customRoutesIterator.next();
+			System.out.println("CustomRoute: id=" + route.getId() + ", name=" + route.getRouteCustomName());
+			Collection<CustomBus> customBuses2 = route.getCustomBusses();
+			Iterator<CustomBus> customBusesIterator2 = customBuses2.iterator();
+			while (customBusesIterator2.hasNext()) {
+				CustomBus bus = customBusesIterator2.next();
+				System.out.println("\tCustomBus: id=" + bus.getMyCustomId() + ", number=" + bus.getMyCustomNumber());
+			}
 		}
 
 		System.out.println("========Выход========");
