@@ -7,6 +7,7 @@ import java.util.Iterator;
 //import org.apache.log4j.PropertyConfigurator;
 
 import DAO.CustomBusDAO;
+import dto.CustomBus;
 import factory.Factory;
 import util.HibernateUtil;
 import model.*;
