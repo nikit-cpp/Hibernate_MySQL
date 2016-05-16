@@ -1,17 +1,26 @@
 package model;
 
+import javax.persistence.*;
 import java.util.Set;
 import java.util.HashSet;
 
+@Entity
+@Table(name = "driver")
 public class Driver {
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
-	private String name;
-	private String surname;
-	private int age;
-	private Set busses = new HashSet();
 
-	public Driver() {
-	}
+	private String name;
+
+	private String surname;
+
+	private int age;
+
+	@ManyToMany(fetch = FetchType.LAZY, mappedBy = "drivers")
+	private Set<Bus> busses = new HashSet<Bus>();
+
+	public Driver() { }
 
 	public void setBusses(Set busses) {
 		this.busses = busses;

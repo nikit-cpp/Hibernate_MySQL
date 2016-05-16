@@ -1,16 +1,25 @@
 package model;
 
+import javax.persistence.*;
 import java.util.Set;
 import java.util.HashSet;
 
+@Entity
+@Table(name = "route")
 public class Route {
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
-	private String name;
-	private int number;
-	private Set busses = new HashSet();
 
-	public Route() {
-	}
+	private String name;
+
+	private int number;
+
+	@OneToMany
+	@JoinColumn(name = "route_id")
+	private Set<Bus> busses = new HashSet<Bus>();
+
+	public Route() { }
 
 	public void setId(Long id) {
 		this.id = id;

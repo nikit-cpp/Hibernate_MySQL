@@ -28,10 +28,10 @@
 		
 		<!-- Echo all executed SQL to stdout -->
 		<property name="show_sql">false</property>
-		
-		<mapping resource="mapping/Bus.hbm.xml" />
-		<mapping resource="mapping/Driver.hbm.xml" />
-		<mapping resource="mapping/Route.hbm.xml" />
+
+		<mapping class="model.Bus"/>
+		<mapping class="model.Driver"/>
+		<mapping class="model.Route"/>
 
 	</session-factory>
 

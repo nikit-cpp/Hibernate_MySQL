@@ -6,6 +6,7 @@ import java.util.Iterator;
 
 //import org.apache.log4j.PropertyConfigurator;
 
+import factory.Factory;
 import util.HibernateUtil;
 import model.*;
 

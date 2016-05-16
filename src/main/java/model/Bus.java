@@ -1,16 +1,26 @@
 package model;
 
+import javax.persistence.*;
 import java.util.Set;
 import java.util.HashSet;
 
+@Entity
+@Table(name = "bus")
 public class Bus {
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
-	private String number;
-	private Set drivers = new HashSet();
-	private Long route_id;
 
-	public Bus() {
-	}
+	private String number;
+
+	@ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@JoinTable(name = "bus_driver",
+			joinColumns = { @JoinColumn(name = "bus_id", nullable = false, updatable = false) },
+			inverseJoinColumns = { @JoinColumn(name = "driver_id", nullable = false, updatable = false) }
+	)
+	private Set<Driver> drivers = new HashSet<Driver>();
+
+	public Bus() {}
 
 	public void setId(Long id) {
 		this.id = id;
@@ -24,10 +34,6 @@ public class Bus {
 		this.drivers = drivers;
 	}
 
-	public void setRoute_id(Long route_id) {
-		this.route_id = route_id;
-	}
-
 	public Long getId() {
 		return id;
 	}
@@ -38,9 +44,5 @@ public class Bus {
 
 	public Set getDrivers() {
 		return drivers;
-	}
-
-	public Long getRoute_id() {
-		return route_id;
 	}
 }
